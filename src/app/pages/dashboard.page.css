@@ -8,7 +8,7 @@ button {
 }
 
 button:focus-visible {
-  outline: 3px solid #1765bd;
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -78,7 +78,7 @@ button:focus-visible {
   }
 
   .attendee-row {
-    border: 1px solid #e3eaf2;
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 12px;
     margin-bottom: 12px;
@@ -100,7 +100,7 @@ button:focus-visible {
 
   td[data-label]::before {
     content: attr(data-label);
-    color: #65748b;
+    color: var(--muted);
     font-size: 13px;
     font-weight: 600;
   }
@@ -110,7 +110,7 @@ button:focus-visible {
   }
 
   .action-cell {
-    border-top: 1px solid #edf1f6;
+    border-top: 1px solid var(--border);
     margin-top: 8px;
     padding-top: 12px;
     padding-bottom: 0;
