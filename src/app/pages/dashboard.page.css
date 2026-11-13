@@ -133,3 +133,9 @@ button:focus-visible {
 }
 
 .dashboard-tools { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+
+.settings-panel { margin-bottom: 18px; border-top: 3px solid var(--gold); }
+.settings-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.refresh-hint { font-size: 13px; margin-bottom: 4px; }
+.refresh-status { min-height: 28px; color: var(--forest); font-size: 14px; margin-bottom: 8px; }
+@media(max-width:750px) { .settings-actions { flex-direction: column; } .settings-actions button { width: 100%; } }

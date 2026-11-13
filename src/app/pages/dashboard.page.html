@@ -1,0 +1,22 @@
+<section class="dashboard-heading"><div><div class="eyebrow">LIVE ATTENDANCE</div><h1>Event dashboard</h1><p>Attendance updates appear automatically across staff devices.</p></div><div class="dashboard-tools">
+<button type="button" class="secondary" [attr.aria-expanded]="settingsOpen" aria-controls="dashboard-settings" (click)="settingsOpen = !settingsOpen">Settings</button>
+<button class="secondary" (click)="logout()">Sign out</button>
+</div></section>
+<section id="dashboard-settings" class="panel settings-panel" *ngIf="settingsOpen" aria-label="Dashboard settings" (keydown.escape)="settingsOpen = false">
+  <h2>Settings</h2><p>Manage attendance data and refresh the dashboard.</p>
+  <div class="settings-actions">
+    <button type="button" class="secondary" [disabled]="loading || refreshing" (click)="refresh()">{{refreshing ? 'Refreshing…' : 'Refresh attendees'}}</button>
+    <button type="button" class="secondary" [disabled]="loading || refreshing || !eligible.length" (click)="exportCsv()">Export CSV</button>
+    <button type="button" class="secondary" *ngIf="isAdmin" routerLink="/staff/import">Import employees</button>
+  </div>
+  <p>Export includes all eligible attendees. Import is available to administrators.</p>
+</section>
+<p class="refresh-hint">Pull down at the top to refresh, or use Settings.</p>
+<div class="refresh-status" role="status" aria-live="polite">
+  <span *ngIf="refreshing">Refreshing attendees…</span>
+  <span *ngIf="!refreshing && pull.distance > 0">{{pull.distance >= pull.threshold ? 'Release to refresh' : 'Pull down to refresh'}}</span>
+  <span *ngIf="!refreshing && !pull.distance && refreshMessage">{{refreshMessage}}</span>
+</div>
+<div class="stats"><div class="panel"><span>Eligible attendees</span><strong>{{eligible.length}}</strong></div><div class="panel"><span>Present</span><strong>{{count('present')}}</strong></div><div class="panel"><span>Absent</span><strong>{{count('absent')}}</strong></div><div class="panel"><span>Pending</span><strong>{{count('pending')}}</strong></div></div>
+<div class="panel attendance-panel"><div class="inline heading"><div><h2>Attendance check-in</h2><p>Search by Employee ID or ticket number</p></div><span class="live">● Live</span></div><input [(ngModel)]="query" placeholder="Search Employee ID / ticket number" aria-label="Search attendees"/><p class="error" *ngIf="error">{{error}}</p><p class="success" *ngIf="message">{{message}}</p><p *ngIf="loading">Loading attendees…</p>
+<div class="table-scroll"><table role="table" aria-label="Eligible attendee attendance"><thead><tr><th>Employee ID</th><th>Ticket</th><th>Status</th><th>Last updated</th><th>Actions</th></tr></thead><tbody><tr class="attendee-row" *ngFor="let person of filtered"><td data-label="Employee ID"><strong>{{person.employeeId}}</strong></td><td data-label="Ticket">{{person.ticketNumber || '—'}}</td><td data-label="Status"><span class="pill" [ngClass]="person.attendance?.status">{{person.attendance?.status || 'pending'}}</span></td><td data-label="Last updated">{{person.attendance?.checkedInAt ? (person.attendance.checkedInAt | date:'medium') : '—'}}</td><td class="action-cell"><div class="actions" role="group" [attr.aria-label]="'Attendance actions for ' + person.employeeId"><button [disabled]="busyId===person.employeeId || person.attendance?.status==='present'" (click)="update(person,'present')">Present</button><button class="secondary" [disabled]="busyId===person.employeeId || person.attendance?.status==='absent'" (click)="update(person,'absent')">Absent</button><button class="text-button" [disabled]="busyId===person.employeeId || person.attendance?.status==='pending'" (click)="update(person,'pending')">Reset</button></div></td></tr><tr *ngIf="!filtered.length"><td colspan="5">No matching eligible attendees.</td></tr></tbody></table></div></div>

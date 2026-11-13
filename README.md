@@ -139,3 +139,7 @@ Staff can select **Export CSV** on the dashboard to download all eligible (`atte
 ## Employee ID shorthand
 
 Public transport lookup accepts `001` for `EMP001`. Exact IDs take precedence: if `001` exists, that record is used. Otherwise numeric input tries the same digits prefixed with `EMP`, preserving leading zeros. Full alphanumeric IDs remain exact matches. Deploy `lookupTransport` for this behavior; the dashboard already supports partial ID searches.
+
+## Dashboard settings and refresh
+
+Open **Settings** on the dashboard for **Refresh attendees**, **Export CSV**, and (for admins) **Import employees**. On touch devices, pull downward at the top of the dashboard until “Release to refresh” appears. Gestures beginning on controls or the attendee table are ignored. Refresh preserves the current search and existing rows, keeps live updates subscribed, and reports failures without clearing the list. Firebase may return cached data when offline; a successful refresh is not proof of server connectivity. Device gesture verification remains a release smoke check.
