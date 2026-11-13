@@ -1,3 +1,4 @@
+const {findAttendee}=require('./lookup-attendee');
 const {onCall,HttpsError}=require('firebase-functions/v2/https');
 const {getDatabase}=require('firebase-admin/database');
 const {initializeApp}=require('firebase-admin/app');
@@ -14,11 +15,11 @@ exports.lookupTransport=onCall({region:'us-central1',maxInstances:10,concurrency
  const tx=await quotaRef.transaction(v=>v===null?1:(v>=15?undefined:v+1),undefined,false);
  if(!tx.committed)throw new HttpsError('resource-exhausted','Too many lookups. Try again later.');
  // These quota nodes must be periodically removed using a scheduled cleanup job or TTL process.
- const [attendeeSnap,settingsSnap]=await Promise.all([db.ref(`events/${eventId}/attendees/${id}`).get(),db.ref(`events/${eventId}/settings`).get()]);
- if(!attendeeSnap.exists())throw new HttpsError('not-found','No transport assignment found for this ID.');
- const attendee=attendeeSnap.val();const settings=settingsSnap.val()||{};
+ const [match,settingsSnap]=await Promise.all([findAttendee(id,async candidate=>(await db.ref(`events/${eventId}/attendees/${candidate}`).get()).val()),db.ref(`events/${eventId}/settings`).get()]);
+ if(!match)throw new HttpsError('not-found','No transport assignment found for this ID.');
+ const attendee=match.attendee;const settings=settingsSnap.val()||{};
  if(!attendee.transport?.pickup&&!attendee.transport?.dropoff)throw new HttpsError('not-found','No transport assignment found for this ID.');
- return {employeeId:id,ticketNumber:attendee.ticketNumber||'',transport:attendee.transport,eventName:settings.eventName||'',emergencyPhone:settings.emergencyPhone||'',departureNotice:settings.departureNotice||''};
+ return {employeeId:match.id,ticketNumber:attendee.ticketNumber||'',transport:attendee.transport,eventName:settings.eventName||'',emergencyPhone:settings.emergencyPhone||'',departureNotice:settings.departureNotice||''};
 });
 
 const {createImportHandler}=require('./import-handler');

@@ -131,3 +131,11 @@ npm run android:apk
 ```
 
 The installable debug-signed APK is generated at `android/app/build/outputs/apk/debug/app-debug.apk`. It is for direct installation/testing; a store release requires your release signing configuration. No release signing credentials are included.
+
+## Attendance CSV export
+
+Staff can select **Export CSV** on the dashboard to download all eligible (`attending`) employees, regardless of the current search or 150-row display limit. Columns include Employee ID, ticket, registration, attendance status and last update in UTC. The UTF-8 CSV includes an Excel-compatible BOM, quoted fields and formula protection. This attendance report has different columns from the import template and should not be uploaded as an import file.
+
+## Employee ID shorthand
+
+Public transport lookup accepts `001` for `EMP001`. Exact IDs take precedence: if `001` exists, that record is used. Otherwise numeric input tries the same digits prefixed with `EMP`, preserving leading zeros. Full alphanumeric IDs remain exact matches. Deploy `lookupTransport` for this behavior; the dashboard already supports partial ID searches.
