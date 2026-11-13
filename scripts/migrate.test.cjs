@@ -1,0 +1,3 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');const {transform}=require('./migrate.cjs');
+test('pickup-only record does not invent dropoff',()=>{const out=transform({pick_up_drop_off:[{id:'BZ2752',pick_up_point:'Point',pick_up_time:'15;45;00',drop_off_region:''}]});assert.equal(out.attendees.BZ2752.transport.pickup.time,'15:45:00');assert.equal(out.attendees.BZ2752.transport.dropoff,undefined);});
+test('registration status distinct from check-in',()=>{const out=transform({employee_ticket_id:{'2068':{status:'not_attending'},'2070':{status:'present'}}});assert.equal(out.attendees['2068'].registrationStatus,'not_attending');assert.equal(out.attendees['2070'].attendance.status,'pending');});

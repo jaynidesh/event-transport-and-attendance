@@ -1,0 +1,113 @@
+{
+  "events": {
+    "eoy2026": {
+      "attendees": {
+        "2068": {
+          "employeeId": "2068",
+          "registrationStatus": "not_attending",
+          "attendance": {
+            "status": "pending",
+            "checkedInAt": null,
+            "checkedInBy": null
+          }
+        },
+        "2069": {
+          "employeeId": "2069",
+          "registrationStatus": "not_attending",
+          "attendance": {
+            "status": "pending",
+            "checkedInAt": null,
+            "checkedInBy": null
+          }
+        },
+        "2070": {
+          "employeeId": "2070",
+          "registrationStatus": "attending",
+          "attendance": {
+            "status": "pending",
+            "checkedInAt": null,
+            "checkedInBy": null
+          },
+          "ticketNumber": "3304",
+          "transport": {
+            "pickup": {
+              "route": "P019A",
+              "vehicle": "508 JN",
+              "driverName": "Bim",
+              "driverPhone": "59243283",
+              "coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+              "point": "RIV DES ANGUILLES, POLICE STATION",
+              "time": "15:45:00"
+            },
+            "dropoff": {
+              "route": "P019A",
+              "vehicle": "508 JN",
+              "driverName": "Bim",
+              "driverPhone": "59243283",
+              "coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+              "region": "Royal Road Riviere Des Anguilles (Near Police Station)"
+            }
+          }
+        },
+        "2071": {
+          "employeeId": "2071",
+          "registrationStatus": "attending",
+          "attendance": {
+            "status": "pending",
+            "checkedInAt": null,
+            "checkedInBy": null
+          },
+          "ticketNumber": "3140",
+          "transport": {
+            "pickup": {
+              "route": "P019A",
+              "vehicle": "508 JN",
+              "driverName": "Bim",
+              "driverPhone": "59243283",
+              "coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+              "point": "RIV DES ANGUILLES, POLICE STATION",
+              "time": "15:45:00"
+            },
+            "dropoff": {
+              "route": "P019A",
+              "vehicle": "508 JN",
+              "driverName": "Bim",
+              "driverPhone": "59243283",
+              "coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+              "region": "Maisonette road Riviere des anguilles"
+            }
+          }
+        },
+        "BZ2752": {
+          "employeeId": "BZ2752",
+          "registrationStatus": "attending",
+          "attendance": {
+            "status": "pending",
+            "checkedInAt": null,
+            "checkedInBy": null
+          },
+          "ticketNumber": "2270",
+          "transport": {
+            "pickup": {
+              "route": "P019A",
+              "vehicle": "508 JN",
+              "driverName": "Bim",
+              "driverPhone": "59243283",
+              "coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+              "point": "RIV DES ANGUILLES, POLICE STATION",
+              "time": "15:45:00"
+            },
+            "dropoff": {
+              "coordinator": "Lavnish (52597564) and Roubesh (52500559)"
+            }
+          }
+        }
+      },
+      "settings": {
+        "eventName": "End of Year Event",
+        "emergencyPhone": "57022118",
+        "departureNotice": "All drop-off transports will depart from Le Domaine De Case Noyale as from 01:30 hrs."
+      }
+    }
+  }
+}

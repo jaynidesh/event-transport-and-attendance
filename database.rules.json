@@ -1,0 +1,23 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "events": {
+      "$eventId": {
+        "attendees": {
+          ".read": "auth != null && root.child('events').child($eventId).child('staff').child(auth.uid).child('active').val() === true",
+          "$employeeId": {
+            "attendance": {
+              ".write": "auth != null && root.child('events').child($eventId).child('staff').child(auth.uid).child('active').val() === true && root.child('events').child($eventId).child('attendees').child($employeeId).child('registrationStatus').val() === 'attending' && newData.hasChildren(['status','checkedInAt','checkedInBy']) && newData.child('status').isString() && (newData.child('status').val() === 'pending' || newData.child('status').val() === 'present' || newData.child('status').val() === 'absent') && newData.child('checkedInBy').val() === auth.uid && newData.child('checkedInAt').val() === now"
+            }
+          }
+        },
+        "staff": {
+          "$uid": {
+            ".read": "auth != null && auth.uid === $uid"
+          }
+        }
+      }
+    }
+  }
+}

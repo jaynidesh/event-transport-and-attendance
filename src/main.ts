@@ -1,0 +1,10 @@
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideRouter, Routes } from '@angular/router';
+import { provideZoneChangeDetection } from '@angular/core';
+import { AppComponent } from './app/app.component';
+import { PublicPage } from './app/pages/public.page';
+import { LoginPage } from './app/pages/login.page';
+import { DashboardPage } from './app/pages/dashboard.page';
+import { staffGuard } from './app/services/staff.guard';
+const routes: Routes = [{path:'',component:PublicPage},{path:'staff/login',component:LoginPage},{path:'staff/dashboard',component:DashboardPage,canActivate:[staffGuard]},{path:'**',redirectTo:''}];
+bootstrapApplication(AppComponent,{providers:[provideZoneChangeDetection({eventCoalescing:true}),provideRouter(routes)]}).catch(console.error);

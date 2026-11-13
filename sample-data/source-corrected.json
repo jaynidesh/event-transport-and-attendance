@@ -1,0 +1,79 @@
+{
+  "additional_info": {
+    "emergency_contact": {
+      "name": "Kelvin",
+      "phone": 57022118
+    },
+    "transport_depart_info": "All drop-off transports will depart from Le Domaine De Case Noyale as from 01:30 hrs."
+  },
+  "employee_ticket_id": {
+    "2068": {
+      "id": 2068,
+      "status": "not_attending"
+    },
+    "2069": {
+      "id": 2069,
+      "status": "not_attending"
+    },
+    "2070": {
+      "id": 2070,
+      "status": "present"
+    },
+    "2071": {
+      "id": 2071,
+      "status": "present"
+    }
+  },
+  "pick_up_drop_off": [
+    {
+      "drop_off_coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+      "drop_off_driver_name": "Bim",
+      "drop_off_driver_number": 59243283,
+      "drop_off_region": "Royal Road Riviere Des Anguilles (Near Police Station)",
+      "drop_off_vehicle_number": "508 JN",
+      "drop_off_vehicle_route": "P019A",
+      "id": "2070",
+      "pick_up_coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+      "pick_up_driver_name": "Bim",
+      "pick_up_driver_number": 59243283,
+      "pick_up_point": "RIV DES ANGUILLES, POLICE STATION",
+      "pick_up_time": "15;45;00",
+      "pick_up_vehicle_registration_number": "508 JN",
+      "pick_up_vehicle_route": "P019A",
+      "ticket_number": "3304"
+    },
+    {
+      "drop_off_coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+      "drop_off_driver_name": "Bim",
+      "drop_off_driver_number": 59243283,
+      "drop_off_region": "Maisonette road Riviere des anguilles",
+      "drop_off_vehicle_number": "508 JN",
+      "drop_off_vehicle_route": "P019A",
+      "id": "2071",
+      "pick_up_coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+      "pick_up_driver_name": "Bim",
+      "pick_up_driver_number": 59243283,
+      "pick_up_point": "RIV DES ANGUILLES, POLICE STATION",
+      "pick_up_time": "15;45;00",
+      "pick_up_vehicle_registration_number": "508 JN",
+      "pick_up_vehicle_route": "P019A",
+      "ticket_number": "3140"
+    },
+    {
+      "drop_off_coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+      "drop_off_driver_name": "",
+      "drop_off_region": "",
+      "drop_off_vehicle_number": "",
+      "drop_off_vehicle_route": "",
+      "id": "BZ2752",
+      "pick_up_coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+      "pick_up_driver_name": "Bim",
+      "pick_up_driver_number": 59243283,
+      "pick_up_point": "RIV DES ANGUILLES, POLICE STATION",
+      "pick_up_time": "15;45;00",
+      "pick_up_vehicle_registration_number": "508 JN",
+      "pick_up_vehicle_route": "P019A",
+      "ticket_number": "2270"
+    }
+  ]
+}
