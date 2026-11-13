@@ -20,3 +20,9 @@ exports.lookupTransport=onCall({region:'us-central1',maxInstances:10,concurrency
  if(!attendee.transport?.pickup&&!attendee.transport?.dropoff)throw new HttpsError('not-found','No transport assignment found for this ID.');
  return {employeeId:id,ticketNumber:attendee.ticketNumber||'',transport:attendee.transport,eventName:settings.eventName||'',emergencyPhone:settings.emergencyPhone||'',departureNotice:settings.departureNotice||''};
 });
+
+const {createImportHandler}=require('./import-handler');
+exports.importAttendees=onCall(
+ {region:'us-central1',maxInstances:5,concurrency:10,timeoutSeconds:120,invoker:'public'},
+ createImportHandler(getDatabase(),HttpsError,allowedEvents)
+);

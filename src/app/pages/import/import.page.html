@@ -1,0 +1,54 @@
+<section class="dashboard-heading">
+  <div><div class="eyebrow">ADMIN BACKOFFICE</div><h1>Import employees</h1><p>Upload employee registrations and transport assignments for this event.</p></div>
+  <a routerLink="/staff/dashboard">Back to dashboard</a>
+</section>
+<section class="panel">
+  <h2>1. Prepare your CSV</h2>
+  <p><a class="download" href="/templates/event-attendees-template.csv" download>Download CSV template</a></p>
+  <p>Open the template in Excel, replace the example row, and save as <strong>CSV UTF-8 (comma delimited)</strong>. Format Employee ID, ticket and phone columns as Text to preserve leading zeros.</p>
+  <p><strong>Required:</strong> employeeId and registrationStatus (attending or not_attending). Ticket and transport details are optional. Up to 500 employees and 1 MB per file.</p>
+  <h2>2. Upload and validate</h2>
+  <label class="overwrite-option"><input type="checkbox" [checked]="overwriteExisting" [disabled]="busy" (change)="changeOverwrite($event)" /> Overwrite existing employees</label>
+  <p>When checked, nonblank CSV values update matching employees. When unchecked, matching employees are skipped entirely and only new employees are created. Attendance is always preserved.</p>
+  <label for="attendee-csv">Employee CSV file</label>
+  <input id="attendee-csv" type="file" accept=".csv,text/csv" [disabled]="busy" (change)="selectFile($event)" aria-describedby="import-policy" />
+  <p id="import-policy">Matching Employee IDs are updated or skipped according to the option above. Blank optional fields keep existing values. Existing attendance and employees outside this file are preserved. New employees start as pending.</p>
+  <p *ngIf="busy" role="status">{{committing ? 'Importing employees… Keep this page open.' : 'Validating CSV and checking existing records…'}}</p>
+  <p class="error" *ngIf="error" role="alert">{{error}}</p>
+  <p class="success" *ngIf="message" role="status">{{message}}</p>
+</section>
+<section class="panel preview" *ngIf="result && !result.imported" [attr.aria-busy]="busy">
+  <h2>3. Review and import</h2>
+  <p>{{fileName}}</p>
+  <div *ngIf="result.errors.length" role="alert">
+    <p class="error"><strong>Import blocked.</strong> Correct these issues and upload the file again. No records were changed.</p>
+    <ul class="errors"><li *ngFor="let issue of result.errors">{{issue}}</li></ul>
+  </div>
+  <ng-container *ngIf="!result.errors.length && result.rows.length">
+    <p><strong>{{result.created}}</strong> to create · <strong>{{result.updated}}</strong> to update · <strong>{{result.skipped}}</strong> to skip. Review the resulting values below. Records are checked again when you import.</p>
+    <div class="preview-list">
+      <article class="employee" *ngFor="let row of visibleRows">
+        <div class="employee-heading"><h3>{{row.employeeId}}</h3><span class="pill">{{row.action}}</span></div>
+        <dl>
+          <dt>Ticket</dt><dd>{{row.ticketNumber || '—'}}</dd>
+          <dt>Registration</dt><dd>{{row.registrationStatus === 'attending' ? 'Attending' : 'Not attending'}}</dd>
+          <dt>Attendance</dt><dd>{{row.attendance.status}}</dd>
+        </dl>
+        <details *ngIf="row.transport"><summary>Review transport details</summary>
+          <div *ngFor="let leg of ['pickup', 'dropoff']">
+            <ng-container *ngIf="(leg === 'pickup' ? row.transport.pickup : row.transport.dropoff) as details">
+              <h4>{{leg === 'pickup' ? 'Pickup' : 'Drop-off'}}</h4>
+              <dl><ng-container *ngFor="let field of transportFields(details)"><dt>{{field.label}}</dt><dd>{{field.value}}</dd></ng-container></dl>
+            </ng-container>
+          </div>
+        </details>
+      </article>
+    </div>
+    <div class="pagination" *ngIf="pageCount > 1">
+      <button class="secondary" [disabled]="page === 0 || busy" (click)="page = page - 1">Previous</button>
+      <span>Page {{page + 1}} of {{pageCount}}</span>
+      <button class="secondary" [disabled]="page + 1 >= pageCount || busy" (click)="page = page + 1">Next</button>
+    </div>
+    <button class="import-button" [disabled]="busy || result.created + result.updated === 0" (click)="importRows()">{{committing ? 'Importing…' : 'Import ' + (result.created + result.updated) + ' employees into Firebase'}}</button>
+  </ng-container>
+</section>

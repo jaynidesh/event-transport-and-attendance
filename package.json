@@ -1,1 +1,43 @@
-{"name":"event-transport-app","version":"1.0.0","private":true,"scripts":{"start":"ng serve","build":"ng build","test:migration":"node --test scripts/migrate.test.cjs","migrate":"node scripts/migrate.cjs","grant-staff":"node scripts/grant-staff.cjs"},"dependencies":{"@angular/animations":"^19.2.0","@angular/common":"^19.2.0","@angular/compiler":"^19.2.0","@angular/core":"^19.2.0","@angular/forms":"^19.2.0","@angular/platform-browser":"^19.2.0","@angular/router":"^19.2.0","firebase":"^11.6.0","rxjs":"~7.8.0","tslib":"^2.3.0","zone.js":"~0.15.0"},"devDependencies":{"@angular-devkit/build-angular":"^19.2.0","@angular/cli":"^19.2.0","@angular/compiler-cli":"^19.2.0","typescript":"~5.8.2","firebase-admin":"^13.2.0"},"engines":{"node":">=20.11"}}
+{
+  "name": "event-transport-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "ng serve",
+    "build": "ng build",
+    "test:migration": "node --test scripts/migrate.test.cjs",
+    "migrate": "node scripts/migrate.cjs",
+    "grant-staff": "node scripts/grant-staff.cjs",
+    "test:import": "node --test functions/import-data.test.js functions/import-handler.test.js",
+    "test": "node --test scripts/*.test.cjs functions/*.test.js",
+    "grant-admin": "node scripts/grant-admin.cjs",
+    "android:sync": "npm run build && cap sync android",
+    "android:apk": "npm run android:sync && cd android && ./gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@angular/animations": "^19.2.0",
+    "@angular/common": "^19.2.0",
+    "@angular/compiler": "^19.2.0",
+    "@angular/core": "^19.2.0",
+    "@angular/forms": "^19.2.0",
+    "@angular/platform-browser": "^19.2.0",
+    "@angular/router": "^19.2.0",
+    "@capacitor/android": "^6.2.3",
+    "@capacitor/core": "^6.2.3",
+    "firebase": "^11.6.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.2.0",
+    "@angular/cli": "^19.2.0",
+    "@angular/compiler-cli": "^19.2.0",
+    "@capacitor/cli": "^6.2.3",
+    "firebase-admin": "^13.2.0",
+    "typescript": "~5.8.2"
+  },
+  "engines": {
+    "node": ">=20.11"
+  }
+}

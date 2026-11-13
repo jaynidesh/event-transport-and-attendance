@@ -1,0 +1,439 @@
+{
+  "events": {
+    "eoy2026": {
+      "attendees": {
+        "2068": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "2068",
+          "registrationStatus": "not_attending"
+        },
+        "2069": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "2069",
+          "registrationStatus": "not_attending"
+        },
+        "2070": {
+          "attendance": {
+            "checkedInAt": 1794552991096,
+            "checkedInBy": "dduqqGpZqQOIVUQhu3UAelgLhKL2",
+            "status": "present"
+          },
+          "employeeId": "2070",
+          "registrationStatus": "attending",
+          "ticketNumber": "3304",
+          "transport": {
+            "dropoff": {
+              "coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+              "driverName": "Bim",
+              "driverPhone": "59243283",
+              "region": "Royal Road Riviere Des Anguilles (Near Police Station)",
+              "route": "P019A",
+              "vehicle": "508 JN"
+            },
+            "pickup": {
+              "coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+              "driverName": "Bim",
+              "driverPhone": "59243283",
+              "point": "RIV DES ANGUILLES, POLICE STATION",
+              "route": "P019A",
+              "time": "15:45:00",
+              "vehicle": "508 JN"
+            }
+          }
+        },
+        "2071": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "2071",
+          "registrationStatus": "attending",
+          "ticketNumber": "3140",
+          "transport": {
+            "dropoff": {
+              "coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+              "driverName": "Bim",
+              "driverPhone": "59243283",
+              "region": "Maisonette road Riviere des anguilles",
+              "route": "P019A",
+              "vehicle": "508 JN"
+            },
+            "pickup": {
+              "coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+              "driverName": "Bim",
+              "driverPhone": "59243283",
+              "point": "RIV DES ANGUILLES, POLICE STATION",
+              "route": "P019A",
+              "time": "15:45:00",
+              "vehicle": "508 JN"
+            }
+          }
+        },
+        "3001": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3001",
+          "registrationStatus": "attending",
+          "ticketNumber": "4001",
+          "transport": {
+            "pickup": {
+              "coordinator": "Demo Coordinator 1",
+              "driverName": "Demo Driver 1",
+              "driverPhone": "50000001",
+              "point": "CUREPIPE, BUS STATION",
+              "route": "P002",
+              "time": "14:30:00",
+              "vehicle": "1234 AG 21"
+            }
+          }
+        },
+        "3002": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3002",
+          "registrationStatus": "attending",
+          "ticketNumber": "4002",
+          "transport": {
+            "dropoff": {
+              "coordinator": "Demo Coordinator 2",
+              "driverName": "Demo Driver 2",
+              "driverPhone": "50000002",
+              "region": "Royal Road Quatre Bornes",
+              "route": "P003",
+              "vehicle": "2345 AB 20"
+            }
+          }
+        },
+        "3003": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3003",
+          "registrationStatus": "attending",
+          "ticketNumber": "4003",
+          "transport": {
+            "dropoff": {
+              "coordinator": "Demo Coordinator 3",
+              "driverName": "Demo Driver 3",
+              "driverPhone": "50000003",
+              "region": "Rose Hill Plaza",
+              "route": "P004",
+              "vehicle": "3456 AC 19"
+            },
+            "pickup": {
+              "coordinator": "Demo Coordinator 3",
+              "driverName": "Demo Driver 3",
+              "driverPhone": "50000003",
+              "point": "ROSE HILL, PLAZA",
+              "route": "P004",
+              "time": "16:30:00",
+              "vehicle": "3456 AC 19"
+            }
+          }
+        },
+        "3004": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3004",
+          "registrationStatus": "attending",
+          "ticketNumber": "4004",
+          "transport": {
+            "pickup": {
+              "coordinator": "Demo Coordinator 1",
+              "driverName": "Demo Driver 4",
+              "driverPhone": "50000004",
+              "point": "PORT LOUIS, VICTORIA",
+              "route": "P005",
+              "time": "17:30:00",
+              "vehicle": "4567 AD 18"
+            }
+          }
+        },
+        "3005": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3005",
+          "registrationStatus": "attending",
+          "ticketNumber": "4005",
+          "transport": {
+            "dropoff": {
+              "coordinator": "Demo Coordinator 2",
+              "driverName": "Demo Driver 5",
+              "driverPhone": "50000005",
+              "region": "Vacoas Central",
+              "route": "P006",
+              "vehicle": "5678 AE 17"
+            }
+          }
+        },
+        "3006": {
+          "attendance": {
+            "checkedInAt": 1794553026962,
+            "checkedInBy": "dduqqGpZqQOIVUQhu3UAelgLhKL2",
+            "status": "present"
+          },
+          "employeeId": "3006",
+          "registrationStatus": "attending",
+          "ticketNumber": "4006",
+          "transport": {
+            "dropoff": {
+              "coordinator": "Demo Coordinator 3",
+              "driverName": "Demo Driver 1",
+              "driverPhone": "50000001",
+              "region": "Curepipe Central",
+              "route": "P002",
+              "vehicle": "1234 AG 21"
+            },
+            "pickup": {
+              "coordinator": "Demo Coordinator 3",
+              "driverName": "Demo Driver 1",
+              "driverPhone": "50000001",
+              "point": "CUREPIPE, BUS STATION",
+              "route": "P002",
+              "time": "15:30:00",
+              "vehicle": "1234 AG 21"
+            }
+          }
+        },
+        "3007": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3007",
+          "registrationStatus": "attending",
+          "ticketNumber": "4007",
+          "transport": {
+            "pickup": {
+              "coordinator": "Demo Coordinator 1",
+              "driverName": "Demo Driver 2",
+              "driverPhone": "50000002",
+              "point": "QUATRE BORNES, MARKET",
+              "route": "P003",
+              "time": "16:30:00",
+              "vehicle": "2345 AB 20"
+            }
+          }
+        },
+        "3008": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3008",
+          "registrationStatus": "attending",
+          "ticketNumber": "4008",
+          "transport": {
+            "dropoff": {
+              "coordinator": "Demo Coordinator 2",
+              "driverName": "Demo Driver 3",
+              "driverPhone": "50000003",
+              "region": "Rose Hill Plaza",
+              "route": "P004",
+              "vehicle": "3456 AC 19"
+            }
+          }
+        },
+        "3009": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3009",
+          "registrationStatus": "attending",
+          "ticketNumber": "4009",
+          "transport": {
+            "dropoff": {
+              "coordinator": "Demo Coordinator 3",
+              "driverName": "Demo Driver 4",
+              "driverPhone": "50000004",
+              "region": "Port Louis Victoria",
+              "route": "P005",
+              "vehicle": "4567 AD 18"
+            },
+            "pickup": {
+              "coordinator": "Demo Coordinator 3",
+              "driverName": "Demo Driver 4",
+              "driverPhone": "50000004",
+              "point": "PORT LOUIS, VICTORIA",
+              "route": "P005",
+              "time": "14:30:00",
+              "vehicle": "4567 AD 18"
+            }
+          }
+        },
+        "3010": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3010",
+          "registrationStatus": "attending",
+          "ticketNumber": "4010",
+          "transport": {
+            "pickup": {
+              "coordinator": "Demo Coordinator 1",
+              "driverName": "Demo Driver 5",
+              "driverPhone": "50000005",
+              "point": "VACOAS, BUS STATION",
+              "route": "P006",
+              "time": "15:30:00",
+              "vehicle": "5678 AE 17"
+            }
+          }
+        },
+        "3011": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3011",
+          "registrationStatus": "attending",
+          "ticketNumber": "4011",
+          "transport": {
+            "dropoff": {
+              "coordinator": "Demo Coordinator 2",
+              "driverName": "Demo Driver 1",
+              "driverPhone": "50000001",
+              "region": "Curepipe Central",
+              "route": "P002",
+              "vehicle": "1234 AG 21"
+            }
+          }
+        },
+        "3012": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3012",
+          "registrationStatus": "attending",
+          "ticketNumber": "4012",
+          "transport": {
+            "dropoff": {
+              "coordinator": "Demo Coordinator 3",
+              "driverName": "Demo Driver 2",
+              "driverPhone": "50000002",
+              "region": "Royal Road Quatre Bornes",
+              "route": "P003",
+              "vehicle": "2345 AB 20"
+            },
+            "pickup": {
+              "coordinator": "Demo Coordinator 3",
+              "driverName": "Demo Driver 2",
+              "driverPhone": "50000002",
+              "point": "QUATRE BORNES, MARKET",
+              "route": "P003",
+              "time": "17:30:00",
+              "vehicle": "2345 AB 20"
+            }
+          }
+        },
+        "3013": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3013",
+          "registrationStatus": "attending",
+          "ticketNumber": "4013",
+          "transport": {
+            "pickup": {
+              "coordinator": "Demo Coordinator 1",
+              "driverName": "Demo Driver 3",
+              "driverPhone": "50000003",
+              "point": "ROSE HILL, PLAZA",
+              "route": "P004",
+              "time": "14:30:00",
+              "vehicle": "3456 AC 19"
+            }
+          }
+        },
+        "3014": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3014",
+          "registrationStatus": "attending",
+          "ticketNumber": "4014",
+          "transport": {
+            "dropoff": {
+              "coordinator": "Demo Coordinator 2",
+              "driverName": "Demo Driver 4",
+              "driverPhone": "50000004",
+              "region": "Port Louis Victoria",
+              "route": "P005",
+              "vehicle": "4567 AD 18"
+            }
+          }
+        },
+        "3015": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "3015",
+          "registrationStatus": "attending",
+          "ticketNumber": "4015",
+          "transport": {
+            "dropoff": {
+              "coordinator": "Demo Coordinator 3",
+              "driverName": "Demo Driver 5",
+              "driverPhone": "50000005",
+              "region": "Vacoas Central",
+              "route": "P006",
+              "vehicle": "5678 AE 17"
+            },
+            "pickup": {
+              "coordinator": "Demo Coordinator 3",
+              "driverName": "Demo Driver 5",
+              "driverPhone": "50000005",
+              "point": "VACOAS, BUS STATION",
+              "route": "P006",
+              "time": "16:30:00",
+              "vehicle": "5678 AE 17"
+            }
+          }
+        },
+        "2752": {
+          "attendance": {
+            "status": "pending"
+          },
+          "employeeId": "2752",
+          "registrationStatus": "attending",
+          "ticketNumber": "2270",
+          "transport": {
+            "dropoff": {
+              "coordinator": "Lavnish (52597564) and Roubesh (52500559)"
+            },
+            "pickup": {
+              "coordinator": "Lavnish (52597564) and Roubesh (52500559)",
+              "driverName": "Bim",
+              "driverPhone": "59243283",
+              "point": "RIV DES ANGUILLES, POLICE STATION",
+              "route": "P019A",
+              "time": "15:45:00",
+              "vehicle": "508 JN"
+            }
+          }
+        }
+      },
+      "settings": {
+        "departureNotice": "All drop-off transports will depart from Le Domaine De Case Noyale as from 01:30 hrs.",
+        "emergencyPhone": "57022118",
+        "eventName": "End of Year Event"
+      },
+      "staff": {
+        "dduqqGpZqQOIVUQhu3UAelgLhKL2": {
+          "active": true,
+          "role": "admin"
+        }
+      }
+    }
+  },
+  "lookupRateLimits": {
+    "27eec202df1f4c7b9e57ad0eda62954e96c20f70fff710bcea2f8767014576e3": {
+      "29909210": 2,
+      "29909211": 1
+    }
+  }
+}

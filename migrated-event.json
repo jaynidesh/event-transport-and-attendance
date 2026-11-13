@@ -78,8 +78,8 @@
             }
           }
         },
-        "BZ2752": {
-          "employeeId": "BZ2752",
+        "2752": {
+          "employeeId": "2752",
           "registrationStatus": "attending",
           "attendance": {
             "status": "pending",

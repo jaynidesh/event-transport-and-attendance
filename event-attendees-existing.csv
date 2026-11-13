@@ -1,0 +1,21 @@
+﻿employeeId,ticketNumber,registrationStatus,pickupRoute,pickupPoint,pickupTime,pickupVehicle,pickupDriverName,pickupDriverPhone,pickupCoordinator,dropoffRoute,dropoffRegion,dropoffVehicle,dropoffDriverName,dropoffDriverPhone,dropoffCoordinator
+2068,,not_attending,,,,,,,,,,,,,
+2069,,not_attending,,,,,,,,,,,,,
+2070,3304,attending,P019A,"RIV DES ANGUILLES, POLICE STATION",15:45:00,508 JN,Bim,59243283,Lavnish (52597564) and Roubesh (52500559),P019A,Royal Road Riviere Des Anguilles (Near Police Station),508 JN,Bim,59243283,Lavnish (52597564) and Roubesh (52500559)
+2071,3140,attending,P019A,"RIV DES ANGUILLES, POLICE STATION",15:45:00,508 JN,Bim,59243283,Lavnish (52597564) and Roubesh (52500559),P019A,Maisonette road Riviere des anguilles,508 JN,Bim,59243283,Lavnish (52597564) and Roubesh (52500559)
+3001,4001,attending,P002,"CUREPIPE, BUS STATION",14:30:00,1234 AG 21,Demo Driver 1,50000001,Demo Coordinator 1,,,,,,
+3002,4002,attending,,,,,,,,P003,Royal Road Quatre Bornes,2345 AB 20,Demo Driver 2,50000002,Demo Coordinator 2
+3003,4003,attending,P004,"ROSE HILL, PLAZA",16:30:00,3456 AC 19,Demo Driver 3,50000003,Demo Coordinator 3,P004,Rose Hill Plaza,3456 AC 19,Demo Driver 3,50000003,Demo Coordinator 3
+3004,4004,attending,P005,"PORT LOUIS, VICTORIA",17:30:00,4567 AD 18,Demo Driver 4,50000004,Demo Coordinator 1,,,,,,
+3005,4005,attending,,,,,,,,P006,Vacoas Central,5678 AE 17,Demo Driver 5,50000005,Demo Coordinator 2
+3006,4006,attending,P002,"CUREPIPE, BUS STATION",15:30:00,1234 AG 21,Demo Driver 1,50000001,Demo Coordinator 3,P002,Curepipe Central,1234 AG 21,Demo Driver 1,50000001,Demo Coordinator 3
+3007,4007,attending,P003,"QUATRE BORNES, MARKET",16:30:00,2345 AB 20,Demo Driver 2,50000002,Demo Coordinator 1,,,,,,
+3008,4008,attending,,,,,,,,P004,Rose Hill Plaza,3456 AC 19,Demo Driver 3,50000003,Demo Coordinator 2
+3009,4009,attending,P005,"PORT LOUIS, VICTORIA",14:30:00,4567 AD 18,Demo Driver 4,50000004,Demo Coordinator 3,P005,Port Louis Victoria,4567 AD 18,Demo Driver 4,50000004,Demo Coordinator 3
+3010,4010,attending,P006,"VACOAS, BUS STATION",15:30:00,5678 AE 17,Demo Driver 5,50000005,Demo Coordinator 1,,,,,,
+3011,4011,attending,,,,,,,,P002,Curepipe Central,1234 AG 21,Demo Driver 1,50000001,Demo Coordinator 2
+3012,4012,attending,P003,"QUATRE BORNES, MARKET",17:30:00,2345 AB 20,Demo Driver 2,50000002,Demo Coordinator 3,P003,Royal Road Quatre Bornes,2345 AB 20,Demo Driver 2,50000002,Demo Coordinator 3
+3013,4013,attending,P004,"ROSE HILL, PLAZA",14:30:00,3456 AC 19,Demo Driver 3,50000003,Demo Coordinator 1,,,,,,
+3014,4014,attending,,,,,,,,P005,Port Louis Victoria,4567 AD 18,Demo Driver 4,50000004,Demo Coordinator 2
+3015,4015,attending,P006,"VACOAS, BUS STATION",16:30:00,5678 AE 17,Demo Driver 5,50000005,Demo Coordinator 3,P006,Vacoas Central,5678 AE 17,Demo Driver 5,50000005,Demo Coordinator 3
+2752,2270,attending,P019A,"RIV DES ANGUILLES, POLICE STATION",15:45:00,508 JN,Bim,59243283,Lavnish (52597564) and Roubesh (52500559),,,,,,Lavnish (52597564) and Roubesh (52500559)

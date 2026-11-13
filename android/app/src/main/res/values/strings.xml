@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Event Transport</string>
+    <string name="title_activity_main">Event Transport</string>
+    <string name="package_name">com.sbmeoy.eventtransport</string>
+    <string name="custom_url_scheme">com.sbmeoy.eventtransport</string>
+</resources>

@@ -72,3 +72,57 @@ firebase deploy --only hosting
 - Check-in uses an RTDB transaction to avoid overwriting concurrent updates. Duplicate status submissions are ignored; status changes can be made by any authorized staff member.
 - Database rules do not provide immutable attendance audit history. For stronger compliance, move attendance updates to an authenticated callable function that writes append-only audit records.
 - Function region and Firebase database location may differ; choose a nearby region for production and update both Angular and Functions config together.
+
+## Admin CSV backoffice
+
+Open `/staff/import`, or sign in and choose **Import employees** on the dashboard.
+Only an active event staff record with `role: "admin"` can preview or import files.
+The callable function enforces this independently of the Angular route guard;
+ordinary staff retain attendance access but cannot import employee records.
+
+Grant an existing Firebase Authentication user admin access using local Admin SDK credentials:
+
+```sh
+export GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/service-account.json
+export FIREBASE_DATABASE_URL=https://YOUR_DB_REGION.firebasedatabase.app
+npm run grant-admin -- YOUR_AUTH_UID eoy2026
+```
+
+Deploy the new callable endpoint and rebuild/deploy the frontend before using the page:
+
+```sh
+firebase deploy --only functions:importAttendees
+npm run build
+firebase deploy --only hosting
+```
+
+Workflow:
+1. Download `event-attendees-template.csv` from the backoffice. The example row must be replaced.
+2. In Excel, format ID, ticket and phone columns as **Text** before entering values. Save as **CSV UTF-8 (comma delimited)**, not XLSX. Excel can otherwise remove leading zeros.
+3. Upload the CSV. Validation and preview run on the authenticated server without writing data.
+4. Review create/update counts, registration, attendance and expandable transport details. Fix any errors and upload again.
+5. Choose **Import employees into Firebase** to commit the whole file atomically.
+
+`employeeId` and `registrationStatus` are required. Employee IDs normalize to uppercase and must contain 2–40 letters, digits, underscores or hyphens. Registration is `attending` or `not_attending`. Optional tickets use 1–40 letters, digits, underscores or hyphens. Pickup times use `HH:mm` or `HH:mm:ss`. Unknown/duplicate headers, invalid rows, duplicate normalized IDs, duplicate tickets and ticket collisions with other database employees block import. Files are limited to 500 employees / 1 MB.
+
+The existing root `event-attendees-existing.csv` can be uploaded through this same admin workflow. It is intentionally not published as a public download because it contains employee assignments. Both supplied CSV files are covered by the parser tests. The backend writes the format from `sbmeoy-76e19-default-rtdb-export_new.json` under `events/eoy2026/attendees/{employeeId}`.
+
+**Overwrite existing employees** is checked by default. Uncheck it to create only new employees and skip matching Employee IDs completely. Changing this option refreshes the preview; create/update/skip counts reflect the selected mode. The server rechecks which employees exist at commit time.
+
+Blank optional fields preserve existing values. Nonblank fields replace the corresponding values; omitted employees are not removed. Existing attendance status, timestamp and staff attribution are preserved. New employees receive `attendance: {status: "pending"}`. Settings and staff records are preserved. The import revalidates tickets and administrator access in a transaction against the latest event state, including check-ins made since preview. No direct client write permission to employee records is added.
+
+Run `npm test` for migration, CSV and import-handler tests. Handler tests use an in-memory database adapter; deployed Firebase and browser verification remain separate integration checks.
+
+## Android APK
+
+The Capacitor Android project uses app ID `com.sbmeoy.eventtransport` and bundles the Angular production build locally. Firebase features still require an internet connection and deployed backend functions.
+
+With JDK 17 and Android SDK 34 installed:
+
+```sh
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+npm run android:apk
+```
+
+The installable debug-signed APK is generated at `android/app/build/outputs/apk/debug/app-debug.apk`. It is for direct installation/testing; a store release requires your release signing configuration. No release signing credentials are included.
