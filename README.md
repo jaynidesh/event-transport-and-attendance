@@ -2,6 +2,11 @@
 
 Responsive Angular standalone application using Firebase Authentication, Realtime Database and callable Cloud Functions.
 
+## Build and release guides
+
+- [Build guide](docs/BUILD.md): dependencies, verification, web builds, debug APKs and signed Android releases.
+- [Release guide](docs/RELEASE.md): Firebase Hosting, both callable Functions, database rules, access setup, smoke checks and rollback.
+
 ## Requirements
 - Node.js 22, npm, Firebase CLI (`npm i -g firebase-tools`)
 - Firebase project with **Realtime Database** and **Email/Password Authentication** enabled
